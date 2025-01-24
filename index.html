@@ -1,9 +1,186 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biren Karki - Immigration Advisor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f7ff;
+            color: #004d40;
+            text-align: center;
+        }
+        header {
+            background-color: #00796b;
+            color: #ffffff;
+            width: 100%;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #00796b;
+            margin: 10px auto;
+            display: block;
+        }
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .btn {
+            background-color: #004d40;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: #00695c;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #004d40;
+            color: #ffffff;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 16px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .modal-content {
+            background-color: #ffffff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+        .qr-img {
+            width: 80%;
+            height: auto;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Biren Karki</h1>
+        <h2>Licensed Immigration Advisor</h2>
+    </header>
+    <div class="container">
+        <img src="profile.jpg" alt="Biren Karki" class="profile-img">
+        <a href="https://iaa.ewr.govt.nz/PublicRegister/View.aspx?search=1&p=1&adviserNumber=202000265" class="btn" style="background: #00796b; border: none; color: #ffffff; font-size: 16px; cursor: pointer;">
+            <h2>Immigration Advisor</h2>
+            <i class="fas fa-user-tie"></i> View Profile</a>
 
-  <head>
-    
-  </head>
-  <body>
-    
-  </body>
+        <h3 style="margin-top: 20px;">Specialist in Immigration Law for Australia</h3>
+
+        <div class="btn-grid">
+            <a href="tel:+642108327953" class="btn"><i class="fas fa-phone"></i> Call Me</a>
+            <a href="sms:+642108327953" class="btn"><i class="fas fa-sms"></i> SMS Me</a>
+            <a href="https://wa.me/642108327953" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:biren@linkimmigration.co.nz" class="btn"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </div>
+    <footer>
+      <a href="https://fitandfine.github.io/anup" style="color: #ffffff; text-decoration: none;"> <i class="fas fa-tools"></i> By Anup</a>  
+      <a href="#" onclick="showModal()" style="color: #ffffff; text-decoration: none; margin-right: 20px;"><i class="fas fa-qrcode"></i> QR</a>
+        <button onclick="saveContact()" style="background: none; border: none; color: #ffffff; font-size: 16px; cursor: pointer;"><i class="fas fa-save"></i> Save Contact</button>
+        
+    </footer>
+
+    <!-- QR Modal -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img src="qr.png" alt="QR Code" class="qr-img">
+            <p>Scan this QR code to share or save contact details.</p>
+        </div>
+    </div>
+
+    <script>
+        function showModal() {
+            document.getElementById("qrModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("qrModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target === document.getElementById("qrModal")) {
+                closeModal();
+            }
+        }
+
+        function saveContact() {
+            var vCardData = "BEGIN:VCARD\n" +
+                "VERSION:3.0\n" +
+                "FN:Biren Karki\n" +
+                "ORG:Link Immigration\n" +
+                "TEL;TYPE=WORK,VOICE:+642108327953\n" +
+                "EMAIL;TYPE=PREF,INTERNET:biren@linkimmigration.co.nz\n" +
+                "URL:https://iaa.ewr.govt.nz/PublicRegister/View.aspx?search=1&p=1&adviserNumber=202000265\n" +
+                "END:VCARD";
+
+            var blob = new Blob([vCardData], {type: "text/vcard"});
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = "BirenKarki.vcf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
 </html>
