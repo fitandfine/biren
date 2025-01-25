@@ -3,51 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biren Karki - Immigration Advisor</title>
+    <title>Biren Karki - Director Link Immigration and Visa Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Global Styles */
+        :root {
+            --primary: #6610f2;
+            --secondary: #6c757d;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: var(--font-family-sans-serif);
             margin: 0;
             padding: 0;
-            background-color: #e6f7ff;
-            color: #004d40;
+            background-color: var(--light);
+            color: var(--dark);
             text-align: center;
         }
+
         header {
-            background-color: #00796b;
-            color: #ffffff;
-            width: 100%;
+            background-color: var(--primary);
+            color: var(--light);
             padding: 20px 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header h2 {
+            margin: 5px 0 0;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
         .container {
             width: 90%;
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
             padding: 20px;
-            background: #ffffff;
+            background: var(--light);
             border-radius: 10px;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
         }
+
         .profile-img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            border: 4px solid #00796b;
+            border: 4px solid var(--primary);
             margin: 10px auto;
             display: block;
         }
+
         .btn-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin: 30px 0;
         }
+
         .btn {
-            background-color: #004d40;
-            color: #ffffff;
+            background-color: var(--primary);
+            color: var(--light);
             border: none;
             padding: 12px;
             border-radius: 8px;
@@ -55,22 +81,27 @@
             text-decoration: none;
             transition: background-color 0.3s, transform 0.2s;
         }
+
         .btn:hover {
-            background-color: #00695c;
+            background-color: var(--dark);
             transform: scale(1.05);
         }
+
         footer {
-            background-color: #004d40;
-            color: #ffffff;
+            background-color: var(--dark);
+            color: var(--light);
             width: 100%;
             padding: 20px 0;
             text-align: center;
             font-size: 16px;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            bottom: 0;
-            left: 0;
         }
+
+        footer a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -82,8 +113,9 @@
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.7);
         }
+
         .modal-content {
-            background-color: #ffffff;
+            background-color: var(--light);
             margin: 15% auto;
             padding: 20px;
             border: 1px solid #ccc;
@@ -91,6 +123,7 @@
             border-radius: 10px;
             position: relative;
         }
+
         .close {
             color: #aaa;
             position: absolute;
@@ -100,28 +133,51 @@
             font-weight: bold;
             cursor: pointer;
         }
+
         .close:hover,
         .close:focus {
             color: #000;
             text-decoration: none;
         }
+
         .qr-img {
             width: 80%;
             height: auto;
             margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header h2 {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                font-size: 14px;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Biren Karki</h1>
-        <h2>Licensed Immigration Advisor</h2>
+        
+        <a href="https://linkimmigration.co.nz/" class="btn"><h3><i class="fas fa-globe"></i> Link Immigration and Visa Services</h3></a>
+        <h2>Director </h2>
     </header>
+
     <div class="container">
         <img src="profile.jpg" alt="Biren Karki" class="profile-img">
-        <a href="https://iaa.ewr.govt.nz/PublicRegister/View.aspx?search=1&p=1&adviserNumber=202000265">
-          <h2><i class="fas fa-user-tie"></i>Immigration Advisor NZ</h2></a>
-            
+        <a href="https://iaa.ewr.govt.nz/PublicRegister/View.aspx?search=1&p=1&adviserNumber=202000265" class="btn">
+            <i class="fas fa-user-tie"></i> View NZ Immigration Advisor Profile
+        </a>
 
         <h3 style="margin-top: 20px;">Specialist in Immigration Law for Australia</h3>
 
@@ -130,13 +186,15 @@
             <a href="sms:+642108327953" class="btn"><i class="fas fa-sms"></i> SMS Me</a>
             <a href="https://wa.me/642108327953" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             <a href="mailto:biren@linkimmigration.co.nz" class="btn"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://linkimmigration.co.nz/" class="btn"><i class="fas fa-globe"></i> Visit Website</a>
         </div>
     </div>
+
     <footer>
-      <a href="https://fitandfine.github.io/anup" style="color: #ffffff; text-decoration: none;"> <i class="fas fa-tools"></i> By </a> 
-      
-        <button onclick="saveContact()" style="background: none; border: none; color: #ffffff; font-size: 16px; cursor: pointer;"><i class="fas fa-save"></i> Save Contact</button>
-        <a href="#" onclick="showModal()" style="color: #ffffff; text-decoration: none; margin-right: 20px;"><i class="fas fa-qrcode"></i> QR</a> 
+        <a href="https://fitandfine.github.io/anup" style="margin-left: 20px;"> <i class="fas fa-tools"></i> By </a>
+        <button onclick="saveContact()" style="background: none; border: none; color: var(--light); font-size: 16px; cursor: pointer;"><i class="fas fa-save"></i> Save Contact</button>
+        
+        <a href="#" onclick="showModal()" style="margin-right: 20px;"><i class="fas fa-qrcode"></i> QR</a>
     </footer>
 
     <!-- QR Modal -->
@@ -161,19 +219,20 @@
             if (event.target === document.getElementById("qrModal")) {
                 closeModal();
             }
-        }
+        };
 
         function saveContact() {
             var vCardData = "BEGIN:VCARD\n" +
                 "VERSION:3.0\n" +
                 "FN:Biren Karki\n" +
-                "ORG:Link Immigration\n" +
+                "ORG:Link Immigration and Visa Services\n" +
+                "TITLE:Director\n" +
                 "TEL;TYPE=WORK,VOICE:+642108327953\n" +
                 "EMAIL;TYPE=PREF,INTERNET:biren@linkimmigration.co.nz\n" +
-                "URL:https://iaa.ewr.govt.nz/PublicRegister/View.aspx?search=1&p=1&adviserNumber=202000265\n" +
+                "URL:https://linkimmigration.co.nz\n" +
                 "END:VCARD";
 
-            var blob = new Blob([vCardData], {type: "text/vcard"});
+            var blob = new Blob([vCardData], { type: "text/vcard" });
             var link = document.createElement('a');
             link.href = window.URL.createObjectURL(blob);
             link.download = "BirenKarki.vcf";
